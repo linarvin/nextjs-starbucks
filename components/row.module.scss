@@ -1,0 +1,21 @@
+@use '../styles/abstracts/mixins';
+
+.row{
+    //background-color: yellow;
+    display: flex;
+    //flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 -0.5rem;
+    &.justify-content-center{
+        justify-content: center;
+    }
+    &.justify-content-space-between{
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+    }
+    &.justify-content-left{
+        justify-content: left;
+    }
+    
+} //row end 

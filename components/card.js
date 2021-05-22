@@ -1,0 +1,34 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
+import Heading from './heading'
+
+export default function Card({ node, parentPath }){
+
+    const { title, slug, featuredImage } = node;
+
+    const { sourceUrl, mediaDetails, altText } = featuredImage.node;
+
+    const { width, height } = mediaDetails;
+
+    return (
+        <div className="card">
+            <Image 
+                src={sourceUrl}
+                height={height}
+                width={width}
+                alt={altText}
+            />
+            <Heading type="h3">
+                <Link href={`/${parentPath}/${slug}`}>
+                
+                    <a>
+                        {title}
+                    </a>
+                    
+                </Link>
+                
+            </Heading>
+        </div>
+    )
+}
